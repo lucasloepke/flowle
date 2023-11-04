@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: var(--davys-gray);
+  background-color: #919189ff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +17,7 @@ body {
 
 .game-container {
     display: grid;
+    background-color: var(--);
     grid-template-columns: repeat(5, 50px); /* Adjust based on your grid size */
     grid-template-rows: repeat(5, 50px); /* Adjust based on your grid size */
     gap: 5px;
