@@ -9,3 +9,18 @@
 body {
   background-color: var(--davys-gray);
 }
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(5, 50px); /* Adjust based on your grid size */
+    grid-template-rows: repeat(5, 50px); /* Adjust based on your grid size */
+    gap: 5px;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+}
