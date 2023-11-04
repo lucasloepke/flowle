@@ -12,6 +12,7 @@ body {
 
 .game-container {
     display: grid;
+    margin: auto;
     grid-template-columns: repeat(5, 50px); /* Adjust based on your grid size */
     grid-template-rows: repeat(5, 50px); /* Adjust based on your grid size */
     gap: 5px;
