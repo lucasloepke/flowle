@@ -17,13 +17,10 @@ body {
 
 .game-container {
     display: grid;
-    background-color: #919189ff;
-    border: 5px;
-    border-color: #ccd9ff;
-    border-radius: 5px;
     grid-template-columns: repeat(5, 50px); /* Adjust based on your grid size */
     grid-template-rows: repeat(5, 50px); /* Adjust based on your grid size */
     gap: 5px;
+    background-color: #919189;
 }
 
 .dot {
