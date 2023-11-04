@@ -8,6 +8,7 @@
 
 body {
   background-color: var(--davys-gray);
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
