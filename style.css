@@ -20,7 +20,8 @@ body {
     grid-template-columns: repeat(5, 50px); /* Adjust based on your grid size */
     grid-template-rows: repeat(5, 50px); /* Adjust based on your grid size */
     gap: 5px;
-    background-color: #919189;
+    background-color: #919189ff;
+    margin: auto;
 }
 
 .dot {
