@@ -21,6 +21,7 @@ body {
     grid-template-rows: repeat(5, 50px); /* Adjust based on your grid size */
     gap: 5px;
     background-color: #919189ff;
+    border-radius: 5px;
 }
 
 .dot {
