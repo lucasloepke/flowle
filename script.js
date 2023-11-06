@@ -1,7 +1,13 @@
 const gridSize = 5;
+const titleScreen = document.getElementById('title-screen') // ""?
 const gameContainer = document.getElementById('game-container');
 gameContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
 gameContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+
+function startGame() {
+    titleScreen.style.display = "none";
+    gameContainer.style.display = "grid";
+}
 
 const dots = Array(gridSize).fill().map(() => Array(gridSize).fill(null));
 let currentLine = null;

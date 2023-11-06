@@ -1,7 +1,7 @@
 :root {
   --davys-gray: #494947ff;
   --spring-green: #35ff69ff;
-  --vivid-sky-blue: #44ccffff;
+  --vivid-sky-blue: rgb(13, 83, 109);
   --cornflower-blue: #7494eaff;
   --steel-pink: #d138bfff;
 }
@@ -13,12 +13,20 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  font-family: 'Franklin Gothic Medium';
+}
+
+.title-screen {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #game-container {
   width: 500px;
   height: 500px;
-  display: grid;
+  display: none;
   padding: 40px;
   gap: 10px;
   background-color: #919189ff;
@@ -36,4 +44,22 @@ body {
   justify-content: center;
   align-items: center;
   margin: auto;
+}
+
+.button {
+  background-color: #4b71d6ff;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.5);
+}
+
+.button:hover {
+  background-color: #3e5eb5;
 }
