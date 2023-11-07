@@ -78,3 +78,10 @@ function isGridFilled() {
     return true;
 }
 
+function setLevel(x) {
+    document.getElementById('level').textContent = "Level "+x;
+}
+
+function addTime() {
+    document.getElementById('timer').textContent = "00:00";
+}
