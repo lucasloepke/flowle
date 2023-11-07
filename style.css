@@ -13,7 +13,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  font-family: 'Franklin Gothic Medium';
+  font-family: Verdana;
 }
 
 .title-screen {
@@ -32,6 +32,13 @@ body {
   background-color: #919189ff;
   border-radius: 40px;
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.5);
+}
+
+.round {
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  display: none;
 }
 
 .dot {
@@ -62,4 +69,5 @@ body {
 
 .button:hover {
   background-color: #3e5eb5;
+  transition: background-color 0.25s;
 }

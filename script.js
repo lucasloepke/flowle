@@ -1,11 +1,13 @@
 const gridSize = 5;
-const titleScreen = document.getElementById('title-screen') // ""?
+const titleScreen = document.getElementById('title-screen'); // ""?
 const gameContainer = document.getElementById('game-container');
+const round = document.getElementById('round');
 gameContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
 gameContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
 
 function startGame() {
     titleScreen.style.display = "none";
+    round.style.display = "flex";
     gameContainer.style.display = "grid";
 }
 
