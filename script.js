@@ -1,7 +1,25 @@
+// Define an array of daily preset patterns
+const dailyPatterns = [
+    // Pattern for Day 1
+    [
+        ['blue', 'black', 'yellow', 'red', 'black'],
+        ['black', 'black', 'black', 'black', 'black'],
+        ['black', 'blue', 'green', 'black', 'black'],
+        ['black', 'black', 'black', 'black', 'black'],
+        ['green', 'yellow', 'black', 'black', 'red']
+    ],
+    // Pattern for Day 2, and so on...
+];
+
 const gridSize = 5;
 const titleScreen = document.getElementById('title-screen');
 const gameContainer = document.getElementById('game-container');
 const round = document.getElementById('round');
+
+// Initialize the currentDay pattern (you can change this to load patterns for different days)
+const currentDay = 0;
+const pattern = dailyPatterns[currentDay];
+
 gameContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
 gameContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
 
@@ -20,7 +38,7 @@ for (let i = 0; i < gridSize; i++) {
     for (let j = 0; j < gridSize; j++) {
         const dot = document.createElement('div');
         dot.classList.add('dot');
-        dot.style.backgroundColor = 'black';
+        dot.style.backgroundColor = pattern[i][j];
         gameContainer.appendChild(dot);
         dots[i][j] = dot;
 
@@ -38,7 +56,12 @@ for (let i = 0; i < gridSize; i++) {
                 currentColor = null;
                 if (isGridFilled()) {
                     stopTime();
-                    alert('Congratulations! You connected all dots and filled the grid in '+counter+' seconds!');
+                    const isCorrect = checkSolution();
+                    if (isCorrect) {
+                        alert('Congratulations! You connected all dots correctly in ' + counter + ' seconds!');
+                    } else {
+                        alert('Sorry, your solution is incorrect. Please try again.');
+                    }
                 }
             }
         });
@@ -52,23 +75,6 @@ for (let i = 0; i < gridSize; i++) {
     }
 }
 
-// Set two dots of each color
-const colors = ['blue', 'red', 'green'];
-for (const color of colors) {
-    getEmptyDot().style.backgroundColor = color;
-    getEmptyDot().style.backgroundColor = color;
-}
-
-function getEmptyDot() {
-    let dot;
-    do {
-        const i = Math.floor(Math.random() * gridSize);
-        const j = Math.floor(Math.random() * gridSize);
-        dot = dots[i][j];
-    } while (dot.style.backgroundColor !== 'black');
-    return dot;
-}
-
 function isGridFilled() {
     for (let i = 0; i < gridSize; i++) {
         for (let j = 0; j < gridSize; j++) {
@@ -80,20 +86,43 @@ function isGridFilled() {
     return true;
 }
 
+// Function to check the solution against the reference path
+function checkSolution() {
+    // Define the reference solution for the current pattern (modify as needed)
+    const referenceSolution = [
+        ['blue', 'yellow', 'yellow', 'red', 'red'],
+        ['blue', 'yellow', 'yellow', 'yellow', 'red'],
+        ['blue', 'blue', 'green', 'yellow', 'red'],
+        ['green', 'green', 'green', 'yellow', 'red'],
+        ['green', 'yellow', 'yellow', 'yellow', 'red']
+    ];
+
+    for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
+            const dotColor = dots[i][j].style.backgroundColor;
+            const solutionColor = referenceSolution[i][j];
+            if (dotColor !== solutionColor) {
+                return false; // Incorrect color at this position
+            }
+        }
+    }
+    return true; // The solution matches the reference path
+}
 function setLevel(x) {
-    document.getElementById('level').textContent = "Level "+x;
+    document.getElementById('level').textContent = "Day " + (x + 1);
 }
 
 var timer;
 var counter;
+
 function beginTime() {
     counter = 0;
-    timer = setInterval(function() {
+    timer = setInterval(function () {
         counter++;
-        document.getElementById("timer").innerHTML = counter+'s';
-    }, 1000);  
+        document.getElementById("timer").innerHTML = counter + 's';
+    }, 1000);
 }
+
 function stopTime() {
     clearInterval(timer);
 }
-
