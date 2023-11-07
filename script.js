@@ -9,6 +9,7 @@ function startGame() {
     titleScreen.style.display = "none";
     round.style.display = "flex";
     gameContainer.style.display = "grid";
+    beginTime();
 }
 
 const dots = Array(gridSize).fill().map(() => Array(gridSize).fill(null));
@@ -36,7 +37,8 @@ for (let i = 0; i < gridSize; i++) {
                 currentLine = null;
                 currentColor = null;
                 if (isGridFilled()) {
-                    alert('Congratulations! You connected all dots and filled the grid!');
+                    stopTime();
+                    alert('Congratulations! You connected all dots and filled the grid in '+counter+' seconds!');
                 }
             }
         });
@@ -82,6 +84,16 @@ function setLevel(x) {
     document.getElementById('level').textContent = "Level "+x;
 }
 
-function addTime() {
-    document.getElementById('timer').textContent = "00:00";
+var timer;
+var counter;
+function beginTime() {
+    counter = 0;
+    timer = setInterval(function() {
+        counter++;
+        document.getElementById("timer").innerHTML = counter+'s';
+    }, 1000);  
 }
+function stopTime() {
+    clearInterval(timer);
+}
+
