@@ -1,3 +1,5 @@
 <div align="center">
-  <img max-width="800" src="banner.png"/>
+  <a href="(https://lucasloepke.github.io/flowle/)">
+    <img src="banner.png" style="max-width: 800px;">
+  </a>
 </div>
