@@ -1,12 +1,13 @@
 // Define an array of daily preset patterns
+
 const dailyPatterns = [
     // Pattern for Day 1
     [
-        ['blue', 'black', 'yellow', 'red', 'black'],
+        ['var(--blue)', 'black', 'var(--yellow)', 'var(--red)', 'black'],
         ['black', 'black', 'black', 'black', 'black'],
-        ['black', 'blue', 'green', 'black', 'black'],
+        ['black', 'var(--blue)', 'var(--spring-green)', 'black', 'black'],
         ['black', 'black', 'black', 'black', 'black'],
-        ['green', 'yellow', 'black', 'black', 'red']
+        ['var(--spring-green)', 'var(--yellow)', 'black', 'black', 'var(--red)'],
     ],
     // Pattern for Day 2, and so on...
 ];
@@ -90,11 +91,11 @@ function isGridFilled() {
 function checkSolution() {
     // Define the reference solution for the current pattern (modify as needed)
     const referenceSolution = [
-        ['blue', 'yellow', 'yellow', 'red', 'red'],
-        ['blue', 'yellow', 'yellow', 'yellow', 'red'],
-        ['blue', 'blue', 'green', 'yellow', 'red'],
-        ['green', 'green', 'green', 'yellow', 'red'],
-        ['green', 'yellow', 'yellow', 'yellow', 'red']
+        ['var(--blue)', 'var(--yellow)', 'var(--yellow)', 'var(--red)', 'var(--red)'],
+        ['var(--blue)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--red)'],
+        ['var(--blue)', 'var(--blue)', 'var(--spring-green)', 'var(--yellow)', 'var(--red)'],
+        ['var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--yellow)', 'var(--red)'],
+        ['var(--spring-green)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--red)'],
     ];
 
     for (let i = 0; i < gridSize; i++) {
@@ -125,4 +126,23 @@ function beginTime() {
 
 function stopTime() {
     clearInterval(timer);
+}
+
+const clearButton = document.getElementById('clear-button');
+
+clearButton.addEventListener('click', () => {
+    clearDots();
+});
+
+function clearDots() {
+    for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
+            const dotColor = dots[i][j].style.backgroundColor;
+            const originalColor = pattern[i][j];
+            
+            if (dotColor !== originalColor) {
+                dots[i][j].style.backgroundColor = 'black';
+            }
+        }
+    }
 }

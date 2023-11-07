@@ -4,16 +4,28 @@
   --vivid-sky-blue: rgb(13, 83, 109);
   --cornflower-blue: #7494eaff;
   --steel-pink: #d138bfff;
+  --dracula-bg: #44475a;
+  --dwhite: #282a36;
+  --red: #ff5555;
+  --blue: #8be9fd;
+  --yellow: #f1fa8c;
 }
 
 body {
-  background-color: var(--davys-gray); 
+  background-color: var(--dracula-bg); 
   display: flex;
   justify-content: center;
   align-items: center;
   height: 95vh;
   margin: 0;
-  font-family: Verdana;
+  font-family: 'Source Code Pro', monospace;
+}
+
+h1 {
+  color: white;
+  font-size: 3rem;
+  margin: 10;
+  font-family: 'Source Code Pro', monospace;
 }
 
 .title-screen {
@@ -21,6 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Source Code Pro', monospace;
 }
 
 #game-container {
@@ -29,7 +42,7 @@ body {
   display: none;
   padding: 40px;
   gap: 10px;
-  background-color: #919189ff;
+  background-color: var(--dwhite);
   border-radius: 40px;
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.5);
 }
@@ -54,17 +67,18 @@ body {
 }
 
 .button {
-  background-color: #4b71d6ff;
+  background-color: var(--cornflower-blue);
   border: none;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   border-radius: 10px;
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5);
+  font-family: 'Source Code Pro', monospace;
 }
 
 .button:hover {
