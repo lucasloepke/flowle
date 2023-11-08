@@ -3,12 +3,52 @@
 const dailyPatterns = [
     // Pattern for Day 1
     [
-        ['var(--blue)', 'black', 'var(--yellow)', 'var(--red)', 'black'],
+        ['var(--blue)', 'black', 'var(--red)', 'black', 'var(--spring-green)'],
+        ['black', 'black', 'var(--yellow)', 'black', 'var(--steel-pink)'],
         ['black', 'black', 'black', 'black', 'black'],
-        ['black', 'var(--blue)', 'var(--spring-green)', 'black', 'black'],
-        ['black', 'black', 'black', 'black', 'black'],
-        ['var(--spring-green)', 'var(--yellow)', 'black', 'black', 'var(--red)'],
+        ['black', 'var(--red)', 'black', 'var(--spring-green)', 'black'],
+        ['black', 'var(--blue)', 'var(--yellow)', 'var(--steel-pink)', 'black']
     ],
+    [
+        ['black', 'black', 'black', 'black', 'black'],
+        ['black', 'var(--spring-green)', 'black', 'var(--yellow)', 'black'],
+        ['black', 'black', 'var(--yellow)', 'black', 'black'],
+        ['black', 'black', 'var(--blue)', 'black', 'var(--red)'],
+        ['var(--blue)', 'var(--spring-green)', 'var(--red)', 'black', 'black']
+    ],
+    [
+        ['black', 'black', 'black', 'black', 'var(--yellow)'],
+        ['black', 'var(--spring-green)', 'black', 'black', 'var(--spring-green)'],
+        ['black', 'black', 'black', 'var(--yellow)', 'var(--blue)'],
+        ['black', 'black', 'black', 'var(--red)', 'black'],
+        ['var(--red)', 'var(--blue)', 'black', 'black', 'black']
+    ],
+    [
+        ['black', 'black', 'black', 'black', 'black', 'black'],
+        ['var(--yellow)', 'var(--blue)', 'var(--spring-green)', 'var(--steel-pink)', 'black', 'black'],
+        ['var(--blue)', 'black', 'black', 'var(--red)', 'black', 'black'],
+        ['var(--red)', 'black', 'black', 'black', 'black', 'var(--yellow)'],
+        ['black', 'var(--spring-green)', 'black', 'black', 'var(--steel-pink)', 'var(--vivid-sky-blue)'],
+        ['black', 'black', 'black', 'var(--vivid-sky-blue)', 'black', 'black']
+    ],
+    [
+        ['black', 'black', 'black', 'var(--spring-green)', 'black', 'black'],
+        ['black', 'var(--yellow)', 'black', 'var(--red)', 'black', 'black'],
+        ['black', 'black', 'black', 'var(--yellow)', 'black', 'var(--spring-green)'],
+        ['black', 'black', 'var(--blue)', 'black', 'black', 'var(--steel-pink)'],
+        ['black', 'black', 'black', 'black', 'var(--red)', 'black'],
+        ['black', 'black', 'black', 'black', 'var(--blue)', 'var(--steel-pink)']
+    ],
+    [
+        ['black', 'black', 'black', 'black', 'black', 'black', 'black'],
+        ['black', 'black', 'black', 'black', 'black', 'black', 'black'],
+        ['black', 'black', 'black', 'black', 'var(--vivid-sky-blue)', 'var(--blue)', 'black'],
+        ['black', 'var(--blue)', 'black', 'black', 'black', 'black', 'var(--red)'],
+        ['var(--red)', 'black', 'black', 'black', 'var(--spring-green)', 'black', 'black'],
+        ['var(--vivid-sky-blue)', 'black', 'var(--yellow)', 'black', 'black', 'var(--spring-green)', 'black'],
+        ['var(--steel-pink)', 'black', 'black', 'black', 'black', 'var(--steel-pink)', 'var(--yellow)']
+    ],         
+
     // Pattern for Day 2, and so on...
 ];
 

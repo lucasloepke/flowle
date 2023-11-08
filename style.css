@@ -9,6 +9,7 @@
   --red: #ff5555;
   --blue: #8be9fd;
   --yellow: #f1fa8c;
+  --orange: #db7239;
 }
 
 body {
@@ -104,7 +105,7 @@ h4 {
   mix-blend-mode: difference;
   top: 0;
   left: 0;
-  z-index: 9999999999999999;  
+  z-index: 9999999999999999;
 }
 
 .circle {
