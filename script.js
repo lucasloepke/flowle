@@ -1,29 +1,28 @@
 // Define an array of daily preset patterns
 
 const dailyPatterns = [
-    // Pattern for Day 1
-    [
+    [ // 5x5 0
         ['var(--blue)', 'black', 'var(--red)', 'black', 'var(--spring-green)'],
         ['black', 'black', 'var(--yellow)', 'black', 'var(--steel-pink)'],
         ['black', 'black', 'black', 'black', 'black'],
         ['black', 'var(--red)', 'black', 'var(--spring-green)', 'black'],
         ['black', 'var(--blue)', 'var(--yellow)', 'var(--steel-pink)', 'black']
     ],
-    [
+    [ // 5x5 1
         ['black', 'black', 'black', 'black', 'black'],
         ['black', 'var(--spring-green)', 'black', 'var(--yellow)', 'black'],
         ['black', 'black', 'var(--yellow)', 'black', 'black'],
         ['black', 'black', 'var(--blue)', 'black', 'var(--red)'],
         ['var(--blue)', 'var(--spring-green)', 'var(--red)', 'black', 'black']
     ],
-    [
+    [ // 5x5 2
         ['black', 'black', 'black', 'black', 'var(--yellow)'],
         ['black', 'var(--spring-green)', 'black', 'black', 'var(--spring-green)'],
         ['black', 'black', 'black', 'var(--yellow)', 'var(--blue)'],
         ['black', 'black', 'black', 'var(--red)', 'black'],
         ['var(--red)', 'var(--blue)', 'black', 'black', 'black']
     ],
-    [
+    [ // 6x6 3
         ['black', 'black', 'black', 'black', 'black', 'black'],
         ['var(--yellow)', 'var(--blue)', 'var(--spring-green)', 'var(--steel-pink)', 'black', 'black'],
         ['var(--blue)', 'black', 'black', 'var(--red)', 'black', 'black'],
@@ -31,15 +30,7 @@ const dailyPatterns = [
         ['black', 'var(--spring-green)', 'black', 'black', 'var(--steel-pink)', 'var(--vivid-sky-blue)'],
         ['black', 'black', 'black', 'var(--vivid-sky-blue)', 'black', 'black']
     ],
-    [
-        ['black', 'black', 'black', 'var(--spring-green)', 'black', 'black'],
-        ['black', 'var(--yellow)', 'black', 'var(--red)', 'black', 'black'],
-        ['black', 'black', 'black', 'var(--yellow)', 'black', 'var(--spring-green)'],
-        ['black', 'black', 'var(--blue)', 'black', 'black', 'var(--steel-pink)'],
-        ['black', 'black', 'black', 'black', 'var(--red)', 'black'],
-        ['black', 'black', 'black', 'black', 'var(--blue)', 'var(--steel-pink)']
-    ],
-    [
+    [ // 7x7 4
         ['black', 'black', 'black', 'black', 'black', 'black', 'black'],
         ['black', 'black', 'black', 'black', 'black', 'black', 'black'],
         ['black', 'black', 'black', 'black', 'var(--vivid-sky-blue)', 'var(--blue)', 'black'],
@@ -52,6 +43,50 @@ const dailyPatterns = [
     // Pattern for Day 2, and so on...
 ];
 
+// Define the reference solution for the current pattern (modify as needed)
+const referenceSolution = [
+    [ // 5x5 0
+        ['var(--blue)', 'var(--red)', 'var(--red)', 'var(--spring-green)', 'var(--spring-green)'],
+        ['var(--blue)', 'var(--red)', 'var(--yellow)', 'var(--spring-green)', 'var(--steel-pink)'],
+        ['var(--blue)', 'var(--red)', 'var(--yellow)', 'var(--spring-green)', 'var(--steel-pink)'],
+        ['var(--blue)', 'var(--red)', 'var(--yellow)', 'var(--spring-green)', 'var(--steel-pink)'],
+        ['var(--blue)', 'var(--blue)', 'var(--yellow)', 'var(--steel-pink)', 'var(--steel-pink)'],
+    ],
+    [ // 5x5 1
+        ['var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--blue)'],
+        ['var(--blue)', 'var(--spring-green)', 'var(--yellow)', 'var(--yellow)', 'var(--blue)'],
+        ['var(--blue)', 'var(--spring-green)', 'var(--yellow)', 'var(--blue)', 'var(--blue)'],
+        ['var(--blue)', 'var(--spring-green)', 'var(--blue)', 'var(--blue)', 'var(--red)'],
+        ['var(--blue)', 'var(--spring-green)', 'var(--red)', 'var(--red)', 'var(--red)'],
+    ],
+    [ // 5x5 2
+        ['var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)'],
+        ['var(--yellow)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)'],
+        ['var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--blue)'],
+        ['var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--blue)'],
+        ['var(--red)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--blue)']
+    ],
+    [ // 6x6 3
+        ['var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)'],
+        ['var(--yellow)', 'var(--blue)', 'var(--spring-green)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--yellow)'],
+        ['var(--blue)', 'var(--blue)', 'var(--spring-green)', 'var(--red)', 'var(--steel-pink)', 'var(--yellow)'],
+        ['var(--red)', 'var(--spring-green)', 'var(--spring-green)', 'var(--red)', 'var(--steel-pink)', 'var(--yellow)'],
+        ['var(--red)', 'var(--spring-green)', 'var(--red)', 'var(--red)', 'var(--steel-pink)', 'var(--purple)'],
+        ['var(--red)', 'var(--red)', 'var(--red)', 'var(--purple)', 'var(--purple)', 'var(--purple)']
+    ],
+    [ // 7x7 4
+        ['var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)'],
+        ['var(--red)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--red)'],
+        ['var(--red)', 'var(--blue)', 'var(--purple)', 'var(--purple)', 'var(--purple)', 'var(--blue)', 'var(--red)'],
+        ['var(--red)', 'var(--blue)', 'var(--purple)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--red)'],
+        ['var(--red)', 'var(--purple)', 'var(--purple)', 'var(--yellow)', 'var(--spring-green)', 'var(--yellow)', 'var(--yellow)'],
+        ['var(--purple)', 'var(--purple)', 'var(--yellow)', 'var(--yellow)', 'var(--spring-green)', 'var(--spring-green)', 'var(--yellow)'],
+        ['var(--steel-pink)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--yellow)']
+    ],
+          
+];
+
+
 const gridSize = 5;
 const titleScreen = document.getElementById('title-screen');
 const gameContainer = document.getElementById('game-container');
@@ -60,6 +95,7 @@ const round = document.getElementById('round');
 // Initialize the currentDay pattern (you can change this to load patterns for different days)
 const currentDay = 0;
 const pattern = dailyPatterns[currentDay];
+const solution = referenceSolution[currentDay];
 
 gameContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
 gameContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
@@ -129,19 +165,10 @@ function isGridFilled() {
 
 // Function to check the solution against the reference path
 function checkSolution() {
-    // Define the reference solution for the current pattern (modify as needed)
-    const referenceSolution = [
-        ['var(--blue)', 'var(--yellow)', 'var(--yellow)', 'var(--red)', 'var(--red)'],
-        ['var(--blue)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--red)'],
-        ['var(--blue)', 'var(--blue)', 'var(--spring-green)', 'var(--yellow)', 'var(--red)'],
-        ['var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--yellow)', 'var(--red)'],
-        ['var(--spring-green)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--red)'],
-    ];
-
     for (let i = 0; i < gridSize; i++) {
         for (let j = 0; j < gridSize; j++) {
             const dotColor = dots[i][j].style.backgroundColor;
-            const solutionColor = referenceSolution[i][j];
+            const solutionColor = solution[i][j];
             if (dotColor !== solutionColor) {
                 return false; // Incorrect color at this position
             }
