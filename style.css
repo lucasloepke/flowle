@@ -19,11 +19,19 @@ body {
   height: 95vh;
   margin: 0;
   font-family: 'Source Code Pro', monospace;
+  cursor: none;
 }
 
 h1 {
   color: white;
   font-size: 3rem;
+  margin: 10;
+  font-family: 'Source Code Pro', monospace;
+}
+
+h4 {
+  color: white;
+  font-size: 1rem;
   margin: 10;
   font-family: 'Source Code Pro', monospace;
 }
@@ -37,8 +45,8 @@ h1 {
 }
 
 #game-container {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   display: none;
   padding: 40px;
   gap: 10px;
@@ -79,9 +87,31 @@ h1 {
   border-radius: 10px;
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5);
   font-family: 'Source Code Pro', monospace;
+  margin-bottom: 20px;
 }
 
 .button:hover {
   background-color: #3e5eb5;
   transition: background-color 0.25s;
+  cursor: none;
+}
+
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  display: block;
+  border-radius: 0;
+  mix-blend-mode: difference;
+  top: 0;
+  left: 0;
+  z-index: 9999999999999999;  
+}
+
+.circle {
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 20px;
+    background-color: #fff;
 }
