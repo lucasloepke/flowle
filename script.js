@@ -38,7 +38,17 @@ const dailyPatterns = [
         ['var(--red)', 'black', 'black', 'black', 'var(--spring-green)', 'black', 'black'],
         ['var(--vivid-sky-blue)', 'black', 'var(--yellow)', 'black', 'black', 'var(--spring-green)', 'black'],
         ['var(--steel-pink)', 'black', 'black', 'black', 'black', 'var(--steel-pink)', 'var(--yellow)']
-    ],         
+    ],
+    [ // 7x7 5
+        ['black', 'black', 'var(--red)', 'var(--vivid-sky-blue)', 'black', 'black', 'black'],
+        ['black', 'black', 'var(--spring-green)', 'var(--yellow)', 'black', 'black', 'black'],
+        ['black', 'black', 'var(--steel-pink)', 'var(--blue)', 'black', 'black', 'black'],
+        ['black', 'black', 'black', 'var(--steel-pink)', 'black', 'var(--yellow)', 'black'],
+        ['black', 'black', 'var(--blue)', 'black', 'black', 'var(--spring-green)', 'var(--vivid-sky-blue)'],
+        ['black', 'black', 'black', 'black', 'black', 'black', 'var(--red)'],
+        ['black', 'black', 'black', 'black', 'black', 'black', 'black']
+    ]
+    
 
     // Pattern for Day 2, and so on...
 ];
@@ -83,17 +93,27 @@ const referenceSolution = [
         ['var(--purple)', 'var(--purple)', 'var(--yellow)', 'var(--yellow)', 'var(--spring-green)', 'var(--spring-green)', 'var(--yellow)'],
         ['var(--steel-pink)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--yellow)']
     ],
+    [ // 7x7 5
+        ['var(--red)', 'var(--red)', 'var(--red)', 'var(--vivid-sky-blue)', 'var(--vivid-sky-blue)', 'var(--vivid-sky-blue)', 'var(--vivid-sky-blue)'],
+        ['var(--red)', 'var(--spring-green)', 'var(--spring-green)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--vivid-sky-blue)'],
+        ['var(--red)', 'var(--spring-green)', 'var(--steel-pink)', 'var(--blue)', 'var(--blue)', 'var(--yellow)', 'var(--vivid-sky-blue)'],
+        ['var(--red)', 'var(--spring-green)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--blue)', 'var(--yellow)', 'var(--vivid-sky-blue)'],
+        ['var(--red)', 'var(--spring-green)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--spring-green)', 'var(--vivid-sky-blue)'],
+        ['var(--red)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--red)'],
+        ['var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)']
+    ]
+    
           
 ];
 
 
-const gridSize = 5;
+const gridSize = 7;
 const titleScreen = document.getElementById('title-screen');
 const gameContainer = document.getElementById('game-container');
 const round = document.getElementById('round');
 
 // Initialize the currentDay pattern (you can change this to load patterns for different days)
-const currentDay = 0;
+const currentDay = 5;
 const pattern = dailyPatterns[currentDay];
 const solution = referenceSolution[currentDay];
 
