@@ -1,5 +1,3 @@
-// Define an array of daily preset patterns
-
 const dailyPatterns = [
     [ // 5x5 0
         ['var(--blue)', 'black', 'var(--red)', 'black', 'var(--spring-green)'],
@@ -48,12 +46,10 @@ const dailyPatterns = [
         ['black', 'black', 'black', 'black', 'black', 'black', 'var(--red)'],
         ['black', 'black', 'black', 'black', 'black', 'black', 'black']
     ]
-    
-
-    // Pattern for Day 2, and so on...
+    // More puzzles here...
 ];
 
-// Define the reference solution for the current pattern (modify as needed)
+// Puzzle solutions
 const referenceSolution = [
     [ // 5x5 0
         ['var(--blue)', 'var(--red)', 'var(--red)', 'var(--spring-green)', 'var(--spring-green)'],
@@ -102,18 +98,17 @@ const referenceSolution = [
         ['var(--red)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--red)'],
         ['var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)']
     ]
-    
-          
+    // More solutions here...
 ];
 
-
-const gridSize = 7;
+const gridSize = 5;
 const titleScreen = document.getElementById('title-screen');
 const gameContainer = document.getElementById('game-container');
 const round = document.getElementById('round');
+const contModal = document.getElementById('continue-modal');
 
 // Initialize the currentDay pattern (you can change this to load patterns for different days)
-const currentDay = 5;
+const currentDay = 0;
 const pattern = dailyPatterns[currentDay];
 const solution = referenceSolution[currentDay];
 
@@ -155,7 +150,7 @@ for (let i = 0; i < gridSize; i++) {
                     stopTime();
                     const isCorrect = checkSolution();
                     if (isCorrect) {
-                        alert('Congratulations! You connected all dots correctly in ' + counter + ' seconds!');
+                        showContinueModal();
                     } else {
                         alert('Sorry, your solution is incorrect. Please try again.');
                     }
@@ -197,7 +192,10 @@ function checkSolution() {
     return true; // The solution matches the reference path
 }
 function setLevel(x) {
-    document.getElementById('level').textContent = "Day " + (x + 1);
+    document.getElementById('level').textContent = "Level " + (x + 1);
+    currentDay = x+1;
+    clearDots();
+    startGame();
 }
 
 var timer;
@@ -233,4 +231,17 @@ function clearDots() {
         }
     }
 }
+const conter = document.getElementById('contButt');
+function showContinueModal() {
+    document.getElementById('results').innerHTML = 'Congratulations! You connected all dots correctly in ' + counter + ' seconds!';
 
+    contModal.style.display = "flex";
+    conter.addEventListener('click', () => {
+        currentDay++;
+        setLevel(currentDay);
+        hideContinueModal();
+    });
+}
+function hideContinueModal() {
+    contModal.style.display = "none";
+}
