@@ -193,7 +193,6 @@ function checkSolution() {
 }
 function setLevel(x) {
     document.getElementById('level').textContent = "Level " + (x + 1);
-    currentDay = x+1;
     clearDots();
     startGame();
 }
@@ -231,17 +230,17 @@ function clearDots() {
         }
     }
 }
-const conter = document.getElementById('contButt');
+
 function showContinueModal() {
     document.getElementById('results').innerHTML = 'Congratulations! You connected all dots correctly in ' + counter + ' seconds!';
-
+    stopTime();
     contModal.style.display = "flex";
-    conter.addEventListener('click', () => {
-        currentDay++;
-        setLevel(currentDay);
-        hideContinueModal();
-    });
 }
-function hideContinueModal() {
+
+function nextLevel() {
     contModal.style.display = "none";
+    currentDay++;
+    setLevel(currentDay);
+    hideContinueModal();
+    beginTime();
 }
