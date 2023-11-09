@@ -109,8 +109,8 @@ const contModal = document.getElementById('continue-modal');
 
 // Initialize the currentDay pattern (you can change this to load patterns for different days)
 var currentDay = 0;
-const pattern = dailyPatterns[currentDay];
-const solution = referenceSolution[currentDay];
+var pattern = dailyPatterns[currentDay];
+var solution = referenceSolution[currentDay];
 
 gameContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
 gameContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
@@ -120,9 +120,10 @@ function startGame() {
     round.style.display = "flex";
     gameContainer.style.display = "grid";
     beginTime();
+    clearDots();
 }
 
-const dots = Array(gridSize).fill().map(() => Array(gridSize).fill(null));
+var dots = Array(gridSize).fill().map(() => Array(gridSize).fill(null));
 let currentLine = null;
 let currentColor = null;
 
@@ -182,8 +183,8 @@ function isGridFilled() {
 function checkSolution() {
     for (let i = 0; i < gridSize; i++) {
         for (let j = 0; j < gridSize; j++) {
-            const dotColor = dots[i][j].style.backgroundColor;
-            const solutionColor = solution[i][j];
+            var dotColor = dots[i][j].style.backgroundColor;
+            var solutionColor = solution[i][j];
             if (dotColor !== solutionColor) {
                 return false; // Incorrect color at this position
             }
@@ -193,7 +194,8 @@ function checkSolution() {
 }
 function setLevel(x) {
     document.getElementById('level').textContent = "Level " + (x + 1);
-    clearDots();
+    pattern = dailyPatterns[currentDay];
+    solution = referenceSolution[currentDay];
     startGame();
 }
 
@@ -221,8 +223,8 @@ clearButton.addEventListener('click', () => {
 function clearDots() {
     for (let i = 0; i < gridSize; i++) {
         for (let j = 0; j < gridSize; j++) {
-            const dotColor = dots[i][j].style.backgroundColor;
-            const originalColor = pattern[i][j];
+            var dotColor = dots[i][j].style.backgroundColor;
+            var originalColor = pattern[i][j];
             
             if (dotColor !== originalColor) {
                 dots[i][j].style.backgroundColor = 'black';
@@ -241,6 +243,4 @@ function nextLevel() {
     contModal.style.display = "none";
     currentDay++;
     setLevel(currentDay);
-    clearDots();
-    hideContinueModal();
 }
