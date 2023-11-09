@@ -101,14 +101,14 @@ const referenceSolution = [
     // More solutions here...
 ];
 
-const gridSize = 5;
+var gridSize = 5;
 const titleScreen = document.getElementById('title-screen');
 const gameContainer = document.getElementById('game-container');
 const round = document.getElementById('round');
 const contModal = document.getElementById('continue-modal');
 
 // Initialize the currentDay pattern (you can change this to load patterns for different days)
-const currentDay = 0;
+var currentDay = 0;
 const pattern = dailyPatterns[currentDay];
 const solution = referenceSolution[currentDay];
 
@@ -241,6 +241,6 @@ function nextLevel() {
     contModal.style.display = "none";
     currentDay++;
     setLevel(currentDay);
+    clearDots();
     hideContinueModal();
-    beginTime();
 }
