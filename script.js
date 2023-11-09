@@ -1,4 +1,5 @@
-const dailyPatterns = [
+const dailyPatterns = [    
+
     [ // 5x5 0
         ['var(--blue)', 'black', 'var(--red)', 'black', 'var(--spring-green)'],
         ['black', 'black', 'var(--yellow)', 'black', 'var(--steel-pink)'],
@@ -47,19 +48,32 @@ const dailyPatterns = [
         ['black', 'black', 'black', 'black', 'black', 'black', 'var(--red)'],
         ['black', 'black', 'black', 'black', 'black', 'black', 'black']
     ],
-    [ // 6x6 7
-        ['var(--yellow)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)'],
-        ['var(--blue)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)'],
-        ['var(--red)', 'var(--black)', 'var(--spring-green)', 'var(--black)', 'var(--black)', 'var(--black)'],
-        ['var(--red)', 'var(--black)', 'var(--spring-green)', 'var(--black)', 'var(--black)', 'var(--black)'],
-        ['var(--blue)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)'],
-        ['var(--yellow)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)']
-]
+    [ // 7x7 6
+    ['var(--red)', 'black', 'var(--red)', 'var(--orange)', 'var(--vivid-sky-blue)', 'var(--blue)', 'var(--spring-green)'],
+    ['var(--steel-pink)', 'black', 'black', 'black', 'black', 'black', 'black'],
+    ['black', 'var(--yellow)', 'black', 'black', 'black', 'black', 'black'],
+    ['black', 'black', 'black', 'black', 'var(--vivid-sky-blue)', 'black', 'black'],
+    ['black', 'black', 'black', 'black', 'black', 'black', 'black'],
+    ['black', 'black', 'var(--orange)', 'var(--blue)', 'black', 'var(--steel-pink)', 'black'],
+    ['var(--yellow)', 'black', 'black', 'black', 'black', 'black', 'var(--spring-green)']
+    ],
+        [ // 9x9
+        ['black', 'var(--red)', 'black', 'black', 'black', 'black', 'black', 'black', 'black'],
+        ['black', 'var(--yellow)', 'black', 'var(--steel-pink)', 'black', 'black', 'black', 'var(--vivid-sky-blue)', 'black'],
+        ['black', 'black', 'black', 'black', 'black', 'black', 'black', 'black', 'black'],
+        ['black', 'black', 'black', 'var(--spring-green)', 'black', 'black', 'var(--steel-pink)', 'black', 'black'],
+        ['black', 'var(--red)', 'black', 'black', 'black', 'var(--cornflower-blue)', 'var(--blue)', 'black', 'black'],
+        ['black', 'black', 'black', 'var(--yellow)', 'black', 'black', 'black', 'black', 'var(--cornflower-blue)'],
+        ['black', 'var(--blue)', 'black', 'black', 'black', 'black', 'var(--vivid-sky-blue)', 'black', 'var(--orange)'],
+        ['black', 'black', 'black', 'black', 'black', 'black', 'black', 'var(--spring-green)', 'black'],
+        ['black', 'black', 'black', 'black', 'black', 'black', 'black', 'var(--orange)', 'black']
+    ],
     // More puzzles here...
 ];
 
 // Puzzle solutions
 const referenceSolution = [
+
     [ // 5x5 0
         ['var(--blue)', 'var(--red)', 'var(--red)', 'var(--spring-green)', 'var(--spring-green)'],
         ['var(--blue)', 'var(--red)', 'var(--yellow)', 'var(--spring-green)', 'var(--steel-pink)'],
@@ -107,15 +121,27 @@ const referenceSolution = [
         ['var(--red)', 'var(--spring-green)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--spring-green)', 'var(--vivid-sky-blue)'],
         ['var(--red)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--red)'],
         ['var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)']
-    ],
-    [ // 6x6 7
-        ['var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)'],
-        ['var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--yellow)'],
-        ['var(--red)', 'var(--red)', 'var(--spring-green)', 'var(--spring-green)', 'var(--blue)', 'var(--yellow)'],
-        ['var(--red)', 'var(--red)', 'var(--spring-green)', 'var(--spring-green)', 'var(--blue)', 'var(--yellow)'],
-        ['var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--rblue)', 'var(--blue)', 'var(--yellow)'],
-        ['var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)']
-        ]  
+    ],    
+    [ // 7x7 6
+    ['var(--red)', 'var(--red)', 'var(--red)', 'var(--orange)', 'var(--vivid-sky-blue)', 'var(--blue)', 'var(--spring-green)'],
+    ['var(--steel-pink)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--orange)', 'var(--vivid-sky-blue)', 'var(--blue)', 'var(--spring-green)'],
+    ['var(--yellow)', 'var(--yellow)', 'var(--steel-pink)', 'var(--orange)', 'var(--vivid-sky-blue)', 'var(--blue)', 'var(--spring-green)'],
+    ['var(--yellow)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--orange)', 'var(--vivid-sky-blue)', 'var(--blue)', 'var(--spring-green)'],
+    ['var(--yellow)', 'var(--steel-pink)', 'var(--orange)', 'var(--orange)', 'var(--blue)', 'var(--blue)', 'var(--spring-green)'],
+    ['var(--yellow)', 'var(--steel-pink)', 'var(--orange)', 'var(--blue)', 'var(--blue)', 'var(--steel-pink)', 'var(--spring-green)'],
+    ['var(--yellow)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--spring-green)']
+    ],    
+    [ // 9x9
+    ['var(--red)',          'var(--red)',        'var(--cornflower-blue)', 'var(--cornflower-blue)', 'var(--cornflower-blue)', 'var(--cornflower-blue)', 'var(--cornflower-blue)', 'var(--cornflower-blue)', 'var(--cornflower-blue)'],
+    ['var(--red)',          'var(--yellow)',     'var(--cornflower-blue)', 'var(--steel-pink)',      'var(--steel-pink)',      'var(--steel-pink)',      'var(--steel-pink)',      'var(--vivid-sky-blue)',  'var(--cornflower-blue)'],
+    ['var(--red)',          'var(--yellow)',     'var(--cornflower-blue)', 'var(--cornflower-blue)', 'var(--cornflower-blue)', 'var(--cornflower-blue)', 'var(--steel-pink)',      'var(--vivid-sky-blue)',  'var(--cornflower-blue)'],
+    ['var(--red)',          'var(--yellow)',     'var(--yellow)',         'var(--spring-green)',    'var(--spring-green)',    'var(--cornflower-blue)', 'var(--steel-pink)',      'var(--vivid-sky-blue)',  'var(--cornflower-blue)'],
+    ['var(--red)',          'var(--red)',        'var(--yellow)',         'var(--yellow)',          'var(--spring-green)',    'var(--cornflower-blue)', 'var(--blue)',           'var(--vivid-sky-blue)',  'var(--cornflower-blue)'],
+    ['var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)',  'var(--yellow)',          'var(--spring-green)',    'var(--blue)',           'var(--blue)',           'var(--vivid-sky-blue)',  'var(--cornflower-blue)'],
+    ['var(--spring-green)', 'var(--blue)',       'var(--spring-green)',   'var(--spring-green)',    'var(--spring-green)',    'var(--blue)',           'var(--vivid-sky-blue)',  'var(--vivid-sky-blue)',  'var(--orange)'],
+    ['var(--spring-green)', 'var(--blue)',       'var(--blue)',           'var(--blue)',            'var(--blue)',            'var(--blue)',           'var(--spring-green)',  'var(--spring-green)',  'var(--orange)'],
+    ['var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)',  'var(--spring-green)',    'var(--spring-green)',    'var(--spring-green)',    'var(--spring-green)',    'var(--orange)',         'var(--orange)']
+  ],
     // More solutions here...
 ];
 
@@ -274,3 +300,4 @@ function nextLevel() {
         alert("You've completed all levels!");
     }
 }
+
