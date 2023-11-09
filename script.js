@@ -223,12 +223,8 @@ clearButton.addEventListener('click', () => {
 function clearDots() {
     for (let i = 0; i < gridSize; i++) {
         for (let j = 0; j < gridSize; j++) {
-            var dotColor = dots[i][j].style.backgroundColor;
-            var originalColor = pattern[i][j];
-            
-            if (dotColor !== originalColor) {
-                dots[i][j].style.backgroundColor = 'black';
-            }
+            // Reset the dot's background color to match the new pattern
+            dots[i][j].style.backgroundColor = pattern[i][j];
         }
     }
 }
@@ -241,6 +237,14 @@ function showContinueModal() {
 
 function nextLevel() {
     contModal.style.display = "none";
-    currentDay++;
-    setLevel(currentDay);
+    currentDay++; // Increment the level
+    if (currentDay < dailyPatterns.length) {
+        pattern = dailyPatterns[currentDay];
+        solution = referenceSolution[currentDay];
+        gridSize = pattern[0].length; // Set the grid size based on the new level's pattern size
+        clearDots(); // Clear the previous level's dots
+        setLevel(currentDay);
+    } else {
+        alert("You've completed all levels!");
+    }
 }
