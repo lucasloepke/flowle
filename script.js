@@ -46,6 +46,14 @@ const dailyPatterns = [
         ['black', 'black', 'black', 'black', 'black', 'black', 'var(--red)'],
         ['black', 'black', 'black', 'black', 'black', 'black', 'black']
     ]
+    [ // 6x6 7
+        ['var(--yellow)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)'],
+        ['var(--blue)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)'],
+        ['var(--red)', 'var(--black)', 'var(--spring-green)', 'var(--black)', 'var(--black)', 'var(--black)'],
+        ['var(--red)', 'var(--black)', 'var(--spring-green)', 'var(--black)', 'var(--black)', 'var(--black)'],
+        ['var(--blue)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)'],
+        ['var(--yellow)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)']
+],
     // More puzzles here...
 ];
 
@@ -98,6 +106,14 @@ const referenceSolution = [
         ['var(--red)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--red)'],
         ['var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)']
     ]
+    [ // 6x6 7
+        ['var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)'],
+        ['var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--yellow)'],
+        ['var(--red)', 'var(--red)', 'var(--spring-green)', 'var(--spring-green)', 'var(--blue)', 'var(--yellow)'],
+        ['var(--red)', 'var(--red)', 'var(--spring-green)', 'var(--spring-green)', 'var(--blue)', 'var(--yellow)'],
+        ['var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--rblue)', 'var(--blue)', 'var(--yellow)'],
+        ['var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)']
+        ],  
     // More solutions here...
 ];
 
@@ -119,6 +135,9 @@ function startGame() {
     titleScreen.style.display = "none";
     round.style.display = "flex";
     gameContainer.style.display = "grid";
+    gridSize = pattern[0].length; // Update gridSize based on the new level's pattern size
+    gameContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+    gameContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr`;
     beginTime();
     clearDots();
 }
@@ -193,9 +212,11 @@ function checkSolution() {
     return true; // The solution matches the reference path
 }
 function setLevel(x) {
+    currentDay = x;
     document.getElementById('level').textContent = "Level " + (x + 1);
     pattern = dailyPatterns[currentDay];
     solution = referenceSolution[currentDay];
+    gridSize = pattern[0].length;
     startGame();
 }
 
@@ -242,8 +263,9 @@ function nextLevel() {
         pattern = dailyPatterns[currentDay];
         solution = referenceSolution[currentDay];
         gridSize = pattern[0].length; // Set the grid size based on the new level's pattern size
-        clearDots(); // Clear the previous level's dots
         setLevel(currentDay);
+            clearDots(); // Clear the previous level's dots
+
     } else {
         alert("You've completed all levels!");
     }
