@@ -5,7 +5,8 @@ const dailyPatterns = [
         ['black', 'black', 'black', 'black', 'black'],
         ['black', 'var(--red)', 'black', 'var(--spring-green)', 'black'],
         ['black', 'var(--blue)', 'var(--yellow)', 'var(--steel-pink)', 'black']
-    ],
+    ],    
+
     [ // 5x5 1
         ['black', 'black', 'black', 'black', 'black'],
         ['black', 'var(--spring-green)', 'black', 'var(--yellow)', 'black'],
@@ -45,7 +46,7 @@ const dailyPatterns = [
         ['black', 'black', 'var(--blue)', 'black', 'black', 'var(--spring-green)', 'var(--vivid-sky-blue)'],
         ['black', 'black', 'black', 'black', 'black', 'black', 'var(--red)'],
         ['black', 'black', 'black', 'black', 'black', 'black', 'black']
-    ]
+    ],
     [ // 6x6 7
         ['var(--yellow)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)'],
         ['var(--blue)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)'],
@@ -53,7 +54,7 @@ const dailyPatterns = [
         ['var(--red)', 'var(--black)', 'var(--spring-green)', 'var(--black)', 'var(--black)', 'var(--black)'],
         ['var(--blue)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)'],
         ['var(--yellow)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)', 'var(--black)']
-],
+]
     // More puzzles here...
 ];
 
@@ -66,6 +67,7 @@ const referenceSolution = [
         ['var(--blue)', 'var(--red)', 'var(--yellow)', 'var(--spring-green)', 'var(--steel-pink)'],
         ['var(--blue)', 'var(--blue)', 'var(--yellow)', 'var(--steel-pink)', 'var(--steel-pink)'],
     ],
+
     [ // 5x5 1
         ['var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--blue)'],
         ['var(--blue)', 'var(--spring-green)', 'var(--yellow)', 'var(--yellow)', 'var(--blue)'],
@@ -85,16 +87,16 @@ const referenceSolution = [
         ['var(--yellow)', 'var(--blue)', 'var(--spring-green)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--yellow)'],
         ['var(--blue)', 'var(--blue)', 'var(--spring-green)', 'var(--red)', 'var(--steel-pink)', 'var(--yellow)'],
         ['var(--red)', 'var(--spring-green)', 'var(--spring-green)', 'var(--red)', 'var(--steel-pink)', 'var(--yellow)'],
-        ['var(--red)', 'var(--spring-green)', 'var(--red)', 'var(--red)', 'var(--steel-pink)', 'var(--purple)'],
-        ['var(--red)', 'var(--red)', 'var(--red)', 'var(--purple)', 'var(--purple)', 'var(--purple)']
+        ['var(--red)', 'var(--spring-green)', 'var(--red)', 'var(--red)', 'var(--steel-pink)', 'var(--vivid-sky-blue)'],
+        ['var(--red)', 'var(--red)', 'var(--red)', 'var(--vivid-sky-blue)', 'var(--vivid-sky-blue)', 'var(--vivid-sky-blue)']
     ],
     [ // 7x7 4
         ['var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)'],
         ['var(--red)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--red)'],
-        ['var(--red)', 'var(--blue)', 'var(--purple)', 'var(--purple)', 'var(--purple)', 'var(--blue)', 'var(--red)'],
-        ['var(--red)', 'var(--blue)', 'var(--purple)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--red)'],
-        ['var(--red)', 'var(--purple)', 'var(--purple)', 'var(--yellow)', 'var(--spring-green)', 'var(--yellow)', 'var(--yellow)'],
-        ['var(--purple)', 'var(--purple)', 'var(--yellow)', 'var(--yellow)', 'var(--spring-green)', 'var(--spring-green)', 'var(--yellow)'],
+        ['var(--red)', 'var(--blue)', 'var(--vivid-sky-blue)', 'var(--vivid-sky-blue)', 'var(--vivid-sky-blue)', 'var(--blue)', 'var(--red)'],
+        ['var(--red)', 'var(--blue)', 'var(--vivid-sky-blue)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--red)'],
+        ['var(--red)', 'var(--vivid-sky-blue)', 'var(--vivid-sky-blue)', 'var(--yellow)', 'var(--spring-green)', 'var(--yellow)', 'var(--yellow)'],
+        ['var(--vivid-sky-blue)', 'var(--vivid-sky-blue)', 'var(--yellow)', 'var(--yellow)', 'var(--spring-green)', 'var(--spring-green)', 'var(--yellow)'],
         ['var(--steel-pink)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--steel-pink)', 'var(--yellow)']
     ],
     [ // 7x7 5
@@ -105,7 +107,7 @@ const referenceSolution = [
         ['var(--red)', 'var(--spring-green)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--spring-green)', 'var(--vivid-sky-blue)'],
         ['var(--red)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--spring-green)', 'var(--red)'],
         ['var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)', 'var(--red)']
-    ]
+    ],
     [ // 6x6 7
         ['var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)'],
         ['var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--yellow)'],
@@ -113,7 +115,7 @@ const referenceSolution = [
         ['var(--red)', 'var(--red)', 'var(--spring-green)', 'var(--spring-green)', 'var(--blue)', 'var(--yellow)'],
         ['var(--blue)', 'var(--blue)', 'var(--blue)', 'var(--rblue)', 'var(--blue)', 'var(--yellow)'],
         ['var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)', 'var(--yellow)']
-        ],  
+        ]  
     // More solutions here...
 ];
 
@@ -137,7 +139,7 @@ function startGame() {
     gameContainer.style.display = "grid";
     gridSize = pattern[0].length; // Update gridSize based on the new level's pattern size
     gameContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
-    gameContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr`;
+    gameContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
     beginTime();
     clearDots();
 }
@@ -146,46 +148,7 @@ var dots = Array(gridSize).fill().map(() => Array(gridSize).fill(null));
 let currentLine = null;
 let currentColor = null;
 
-for (let i = 0; i < gridSize; i++) {
-    for (let j = 0; j < gridSize; j++) {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        dot.style.backgroundColor = pattern[i][j];
-        gameContainer.appendChild(dot);
-        dots[i][j] = dot;
 
-        dot.addEventListener('mousedown', (e) => {
-            if (e.target.style.backgroundColor !== 'black') {
-                currentColor = e.target.style.backgroundColor;
-                currentLine = [e.target];
-            }
-        });
-
-        dot.addEventListener('mouseup', (e) => {
-            if (e.target.style.backgroundColor === currentColor) {
-                currentLine.push(e.target);
-                currentLine = null;
-                currentColor = null;
-                if (isGridFilled()) {
-                    stopTime();
-                    const isCorrect = checkSolution();
-                    if (isCorrect) {
-                        showContinueModal();
-                    } else {
-                        alert('Sorry, your solution is incorrect. Please try again.');
-                    }
-                }
-            }
-        });
-
-        dot.addEventListener('mouseenter', (e) => {
-            if (currentLine && (e.target.style.backgroundColor === 'black' || e.target.style.backgroundColor === currentColor)) {
-                e.target.style.backgroundColor = currentColor;
-                currentLine.push(e.target);
-            }
-        });
-    }
-}
 
 function isGridFilled() {
     for (let i = 0; i < gridSize; i++) {
@@ -242,14 +205,55 @@ clearButton.addEventListener('click', () => {
 });
 
 function clearDots() {
+    gridSize = pattern[0].length;
+    
+    gameContainer.innerHTML = '';
+    gameContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+    gameContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+    
+    dots = Array(gridSize).fill().map(() => Array(gridSize).fill(null));
+    
     for (let i = 0; i < gridSize; i++) {
         for (let j = 0; j < gridSize; j++) {
-            // Reset the dot's background color to match the new pattern
-            dots[i][j].style.backgroundColor = pattern[i][j];
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            dot.style.backgroundColor = pattern[i][j];
+            gameContainer.appendChild(dot);
+            dots[i][j] = dot;
+
+            dot.addEventListener('mousedown', (e) => {
+                if (e.target.style.backgroundColor !== 'black') {
+                    currentColor = e.target.style.backgroundColor;
+                    currentLine = [e.target];
+                }
+            });
+
+            dot.addEventListener('mouseup', (e) => {
+                if (e.target.style.backgroundColor === currentColor) {
+                    currentLine.push(e.target);
+                    currentLine = null;
+                    currentColor = null;
+                    if (isGridFilled()) {
+                        stopTime();
+                        const isCorrect = checkSolution();
+                        if (isCorrect) {
+                            showContinueModal();
+                        } else {
+                            alert('Sorry, your solution is incorrect. Please try again.');
+                        }
+                    }
+                }
+            });
+
+            dot.addEventListener('mouseenter', (e) => {
+                if (currentLine && (e.target.style.backgroundColor === 'black' || e.target.style.backgroundColor === currentColor)) {
+                    e.target.style.backgroundColor = currentColor;
+                    currentLine.push(e.target);
+                }
+            });
         }
     }
 }
-
 function showContinueModal() {
     document.getElementById('results').innerHTML = 'Congratulations! You connected all dots correctly in ' + counter + ' seconds!';
     stopTime();
